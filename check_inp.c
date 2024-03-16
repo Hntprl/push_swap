@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_inp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/16 05:10:57 by amarouf           #+#    #+#             */
+/*   Updated: 2024/03/16 05:10:59 by amarouf          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void ft_check_chr(int ac, char **av)
@@ -77,6 +89,7 @@ void ft_check_dbl(int ac, char **av, char *str, char **num)
 		}
 		i ++;
 	}
+	ft_fill_list(numbers, size);
 	free(numbers);
 }
 
