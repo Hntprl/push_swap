@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 05:10:40 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/16 05:41:18 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/16 17:46:07 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,17 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	else
 		p -> next = new;
         new -> next = NULL;
+}
+
+void	ft_lstadd_front(t_list **lst, t_list *new)
+{
+	if (!lst || !new)
+		return ;
+	if (*lst == NULL)
+		*lst = new;
+	else
+	{
+		new -> next = *lst;
+		*lst = new;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 17:15:37 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/16 16:53:41 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/16 17:50:53 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,11 @@ t_list  *ft_fill_list(int *numbers, int size);
 //List
 t_list	*ft_lstnew(int  content);
 void	ft_lstadd_back(t_list **list, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
 //actions
 void ft_swap(t_list **list);
+void ft_push(t_list **list, t_list **list2);
 
 
 #endif
