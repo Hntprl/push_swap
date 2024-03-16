@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 17:15:33 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/15 17:55:19 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/16 00:00:01 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,9 @@
 
 int main (int ac, char **av)
 {
-    int i = 1;
-    char *str;
-    char *tmp;
-
-    str  = NULL;
-    while (i < ac)
-    {
-        tmp = str;
-        str = ft_strjoin(tmp, av[i ++]);
-        free(tmp);
-    }
-    printf ("%s", str);
+    if (ac < 2)
+        (exit(0));
+    ft_check_chr(ac, av);
+    write(2, "OK!", 3);
+    return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 17:47:23 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/15 17:53:18 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/16 00:08:51 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,33 +24,29 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-int	ft_atoi(const char *str)
+long ft_atoi(char *str)
 {
-	int	i;
-	int	s;
-	int	a;
-
-	s = 1;
+	long sign;
+	long i;
+	long sum;
+	
 	i = 0;
-	a = 0;
-	while ((str[i] == ' ') || (str[i] >= 9 && str[i] <= 13))
-	{
-		i ++;
-	}
+	sign = 1;
+	sum = 0;
 	if (str[i] == '-' || str[i] == '+')
+		if (str[i++] == '-')
+			sign = -1;
+	if (str[i] == '\0' || str[i] < '0' || str[i] > '9')
+		(write(2, "Error!\n", 7), exit(1));
+	while (str[i])
 	{
-		if (str[i] == '-')
-		{
-			s *= -1;
-		}
-		i ++;
+		if (str[i] < '0' || str[i] > '9')
+			(write(2, "Error!\n", 7), exit(1));
+		sum *= 10;
+		sum += str[i] - '0';
+		i++;
 	}
-	while (str[i] <= '9' && str[i] >= '0')
-	{
-		a = (str[i] - '0') + (a * 10);
-		i ++;
-	}
-	return (a * s);
+	return (sum * sign);
 }
 
 char	*ft_strjoin(char *s1, char *s2)
