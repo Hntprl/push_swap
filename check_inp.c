@@ -3,13 +3,11 @@
 void ft_check_chr(int ac, char **av)
 {
 	int		i;
-	int		j;
 	char	*str;
 	char	*tmp;
 	char	**num;
 
 	i = 1;
-	j = 0;
 	str  = NULL;
 	while (i < ac)
 	{
@@ -18,7 +16,6 @@ void ft_check_chr(int ac, char **av)
 		free(tmp);
 	}
 	num = ft_split(str, ' ');
-	if (!num[0])
 	ft_check_ovf(num);
 	ft_check_dbl(ac, av, str, num);
 }
@@ -29,23 +26,23 @@ void ft_check_dbl(int ac, char **av, char *str, char **num)
 	int j = 0;
 	int *numbers;
 
-	numbers = malloc(sizeof(int) * ft_wordcount(str, ' '));
+	numbers = malloc(sizeof(int) * (count_words(str, ' ') - 1));
 	if (numbers == NULL)
 		exit(1);
-	i = 0;
 	while (num[i])
 	{
 		numbers[i] = (int)ft_atoi(num[i]);
 		i ++;
 	}
 	i = 0;
-	while(i < ft_wordcount(str, ' '))
+	while(i < (count_words(str, ' ') - 1))
 	{
 	   j = i + 1;
-		while(j < ft_wordcount(str, ' '))
+		while(j < (count_words(str, ' ') - 1))
 		{
-			if (numbers[j ++] == numbers[i])
+			if (numbers[j] == numbers[i])
 				write(2, "Error!\n", 7), exit(1);
+			j ++;
 		}
 		i ++;
 	} 

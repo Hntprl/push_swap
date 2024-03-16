@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 17:15:37 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/16 01:32:46 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/16 02:04:03 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ size_t	ft_strlen(const char *str);
 char	**ft_split(char const *s, char c);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strdup(const char *s1);
-int	ft_wordcount(const char *s, char c);
+int     count_words(char const *str, char c);
+void	free_strings(char **strings);
 
 //Check_input
 void    ft_check_dbl(int ac, char **av, char *str, char **num);
