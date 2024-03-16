@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 17:47:23 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/16 00:08:51 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/16 03:26:23 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,8 @@ long ft_atoi(char *str)
 	if (str[i] == '-' || str[i] == '+')
 		if (str[i++] == '-')
 			sign = -1;
-	if (str[i] == '\0' || str[i] < '0' || str[i] > '9')
-		(write(2, "Error!\n", 7), exit(1));
 	while (str[i])
 	{
-		if (str[i] < '0' || str[i] > '9')
-			(write(2, "Error!\n", 7), exit(1));
 		sum *= 10;
 		sum += str[i] - '0';
 		i++;
