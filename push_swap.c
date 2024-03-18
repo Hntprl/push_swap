@@ -6,20 +6,54 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 17:15:33 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/17 00:02:28 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/18 01:09:19 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_fill_list(int *numbers, int size)
+t_list	*ft_highnum(t_list *list)
+{
+	t_list *tmp;
+	t_list *max;
+
+	tmp = list;
+	max = tmp;
+	while (tmp->next)
+	{
+		tmp = tmp->next;
+		if (tmp->content > max->content)
+			max = tmp;
+	}
+	return (max);
+}
+
+void check_operations(t_list *list)
+{
+	t_list *tmp;
+	t_list *max;
+
+	tmp = list;
+	max = ft_highnum(tmp);
+	if (max == list)
+		ft_rotate(&list);
+	if (max->content == list->next->content)
+		ft_reverse_rotate(&list);
+	if (max->content == list->next->next->content)
+	{
+		if (list->content > list->next->content)
+			ft_swap(&list);
+	}
+}
+
+void	ft_fill_list(int *numbers, int size)
 {
 	t_list *list;
 	int i;
 	
 	list = malloc(sizeof(t_list));
 	if (list == NULL)
-		return (NULL);
+		return ;
 	list->content = numbers[0];
 	list->next = NULL;
 	i = 1;
@@ -28,7 +62,8 @@ t_list	*ft_fill_list(int *numbers, int size)
 		ft_lstadd_back(&list, ft_lstnew(numbers[i]));
 		i++;
 	}
-	return (list);
+	if (ft_lstsize(list) == 3)
+		check_operations(list);
 }
 
 int main (int ac, char **av)
