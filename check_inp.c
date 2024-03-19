@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 05:10:57 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/18 18:21:42 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/19 18:16:58 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void ft_check_chr(int ac, char **av)
 		free(tmp);
 	}
 	num = ft_split(str, ' ');
-	ft_check_ovf(num);
+	ft_check_ovf(num, str);
 	ft_check_dbl(ac, av, str, num);
 }
 
@@ -90,10 +90,9 @@ void ft_check_dbl(int ac, char **av, char *str, char **num)
 		i ++;
 	}
 	ft_fill_list(numbers, size);
-	free(numbers);
 }
 
-void	ft_check_ovf(char **num)
+void	ft_check_ovf(char **num, char *str)
 {
 	int i;
 
@@ -101,7 +100,7 @@ void	ft_check_ovf(char **num)
 	while (num[i])
 	{
 		if (ft_atoi(num[i]) > 2147483647 || ft_atoi(num[i]) < -2147483648)
-			write(2, "Error!\n", 7), exit(1);
+			(free(str), free_strings(num), write(2, "Error!\n", 7), exit(1));
 		i ++;
 	}
 }
