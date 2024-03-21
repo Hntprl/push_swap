@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 17:15:37 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/19 19:39:37 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/21 08:37:32 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,18 @@
 
 typedef struct s_list
 {
-    int				content;
-    struct s_list	*next;
-    int             index;
+	int				content;
+	struct s_list	*next;
+	int             index;
 }   t_list;
+
+typedef struct var
+{
+	int	i;
+	int	chunk;
+	int	o_chunk;
+	int	m_chunk;
+}	var;
 
 //Libft
 long     ft_atoi(char *str);
@@ -49,6 +57,9 @@ void	ft_five (t_list *list_a);
 t_list	*ft_highnum(t_list *list);
 t_list	*ft_minnum(t_list *list);
 void	ft_sorted_numbers(t_list *list_a);
+int		ft_index_count(t_list *val, int min);
+void	ft_index(t_list *list);
+void	ft_two_hundred(t_list *list_a);
 
 //List.
 t_list	*ft_lstnew(int  content);
@@ -63,6 +74,7 @@ void ft_swap(t_list **list, char stack);
 void ft_push(t_list **list, t_list **list2, char stack);
 void ft_rotate(t_list **list, char stack);
 void ft_reverse_rotate(t_list **list, char stack);
+void	ft_rotate_rotate(t_list	**list_a, t_list	**list_b);
 
 //Free.
 void	ft_lstclear(t_list **lst, void (*del)(void *));
