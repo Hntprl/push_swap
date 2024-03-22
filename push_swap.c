@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 17:15:33 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/21 09:10:30 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/22 05:28:54 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,11 @@ void	ft_fill_list(int *numbers, int size)
 	if (ft_lstsize(list_a) == 5)
 		ft_five (list_a);
 	if (ft_lstsize(list_a) > 5 && ft_lstsize(list_a) < 200)
-		ft_two_hundred(list_a);
-	ft_lstclear(&list_a, del);
+		ft_two_hundred(list_a, 5);
+	if (ft_lstsize(list_a) > 200)
+		ft_two_hundred(list_a, 9);
 }
-void	ft_two_hundred(t_list *list_a)
+void	ft_two_hundred(t_list *list_a, int dev)
 {
 	t_list	*list_b;
 	t_list	*tmp;
@@ -45,16 +46,18 @@ void	ft_two_hundred(t_list *list_a)
 	var 	var;
 	
 	var.i = 0;
+	list_b = NULL;
 	size = ft_lstsize(list_a);
-	var.chunk = ft_lstsize(list_a) / 5;
+	var.chunk = ft_lstsize(list_a) / dev;
 	var.m_chunk = var.chunk / 2;
 	var.o_chunk = var.chunk;
 	ft_index(list_a);
 	while (list_a)
 	{
 		while (list_a->index >= var.chunk)
-			ft_rotate(&list_a, 'a');
+			ft_rotate(&list_a, 'a');		
 		ft_push(&list_a, &list_b, 'b');
+	
 		if (list_b->next && list_b->index >= var.m_chunk)
 		{
 			if (list_a && list_a->index >= var.chunk)
@@ -68,15 +71,31 @@ void	ft_two_hundred(t_list *list_a)
 			var.chunk += var.o_chunk;
 		}
 	}
-	// tmp = list_b;
-	// while (size --)
-	// 	tmp = tmp->next;
-	// tmp->next->next = NULL;
-	// while (list_b)
-	// {
-	// 	printf("%d ", list_b->content);
-	// 	list_b = list_b->next;
-	// }
+	ft_last_sort(list_b, list_a);
+}
+
+void	ft_last_sort(t_list *list_b, t_list *list_a)
+{
+	int	mid;
+	int	i;
+
+	i = 0;
+	mid = ft_lstsize(list_b) / 2;
+	list_a = NULL;
+	while (list_b)
+	{
+		if (list_b == ft_highnum(list_b))
+			ft_push(&list_b, &list_a, 'a');
+		else
+		{
+			if (i > mid)
+				ft_rotate(&list_b, 'b');
+			else if (i < mid)
+				ft_reverse_rotate(&list_b, 'b');
+		}
+		i++;
+	}
+	ft_lstclear(&list_a, del);
 }
 
 int	ft_index_count(t_list *val, int min)

@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 05:11:10 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/21 19:40:29 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/21 20:57:05 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ void ft_push(t_list **list, t_list **list2, char stack)
 		return;
 	tmp = (*list);
 	(*list) = (*list)->next;
-	ft_lstadd_front(list2,tmp);
+	tmp->next = (*list2);
+	(*list2) = tmp;
 	if (stack == 'a')
 		write(1, "pa\n", 3);
 	if (stack == 'b')
@@ -55,6 +56,7 @@ void ft_rotate(t_list **list, char stack)
 	if (stack == 'b')
 		write(1, "rb\n", 3);
 }
+
 
 void ft_reverse_rotate(t_list **list, char stack)
 {
@@ -80,7 +82,7 @@ void	ft_rotate_rotate(t_list	**list_a, t_list **list_b)
 	t_list	*tmp;
 	t_list	*tmp2;
 
-	if (!(*list_a) || !(*list_b))
+	if (!(*list_a) || !(*list_b) || !(*list_a)->next || !(*list_b)->next)
 		return;
 	tmp = (*list_a)->next;
 	ft_lstadd_back(list_a, (*list_a));
