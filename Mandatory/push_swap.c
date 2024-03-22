@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 17:15:33 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/22 05:28:54 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/22 20:30:49 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ void	ft_two_hundred(t_list *list_a, int dev)
 
 void	ft_last_sort(t_list *list_b, t_list *list_a)
 {
+	t_list	*high;
 	int	mid;
 	int	i;
 
@@ -84,8 +85,11 @@ void	ft_last_sort(t_list *list_b, t_list *list_a)
 	list_a = NULL;
 	while (list_b)
 	{
-		if (list_b == ft_highnum(list_b))
+		high = ft_highnum(list_b);
+		if (list_b == high || list_b->index == high->index - 1)
 			ft_push(&list_b, &list_a, 'a');
+		if (list_a->next && list_a->index > list_a->next->index)
+			ft_swap(&list_a, 'a');
 		else
 		{
 			if (i > mid)
@@ -95,7 +99,6 @@ void	ft_last_sort(t_list *list_b, t_list *list_a)
 		}
 		i++;
 	}
-	ft_lstclear(&list_a, del);
 }
 
 int	ft_index_count(t_list *val, int min)

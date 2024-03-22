@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 05:11:10 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/21 20:57:05 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/22 20:12:18 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void ft_swap(t_list **list, char stack)
 {
 	t_list *tmp;
 
+	if (!(*list) || !(*list)->next || !list)
+		return;
 	tmp = (*list)->next;
 	(*list)->next = tmp->next;
 	tmp->next = (*list);
