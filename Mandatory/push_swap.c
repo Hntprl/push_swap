@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 17:15:33 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/22 20:30:49 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/23 00:30:58 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,26 +78,24 @@ void	ft_last_sort(t_list *list_b, t_list *list_a)
 {
 	t_list	*high;
 	int	mid;
-	int	i;
-
-	i = 0;
-	mid = ft_lstsize(list_b) / 2;
+	
+	
 	list_a = NULL;
 	while (list_b)
 	{
+		mid = ft_lstsize(list_b) / 2;
 		high = ft_highnum(list_b);
 		if (list_b == high || list_b->index == high->index - 1)
-			ft_push(&list_b, &list_a, 'a');
-		if (list_a->next && list_a->index > list_a->next->index)
-			ft_swap(&list_a, 'a');
-		else
 		{
-			if (i > mid)
-				ft_rotate(&list_b, 'b');
-			else if (i < mid)
-				ft_reverse_rotate(&list_b, 'b');
+			ft_push(&list_b, &list_a, 'a');
+			if (list_a->next && list_a->index > list_a->next->index)
+				ft_swap(&list_a, 'a');
 		}
-		i++;
+		if (ft_posmid(list_b) >= mid)
+			ft_rotate(&list_b, 'b');
+		else if (ft_posmid(list_b) < mid)
+			ft_reverse_rotate(&list_b, 'b');
+		printf("HIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII\n");
 	}
 }
 

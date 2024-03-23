@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 22:28:50 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/18 22:29:23 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/23 00:26:55 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,19 @@ t_list	*ft_minnum(t_list *list)
 			min = tmp;
 	}
 	return (min);
+}
+
+int	ft_posmid(t_list *list_b)
+{
+	int	i;
+
+	i = 0;
+	while (list_b)
+	{
+		if (list_b == ft_highnum(list_b))
+			return(i);
+		list_b = list_b->next;
+		i++;
+	}
+	return (i);
 }
