@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   libft_funcs.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 17:47:23 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/16 03:26:23 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/23 20:09:10 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-long ft_atoi(char *str)
+long	ft_atoi(char *str)
 {
-	long sign;
-	long i;
-	long sum;
-	
+	long	sign;
+	long	i;
+	long	sum;
+
 	i = 0;
 	sign = 1;
 	sum = 0;
@@ -50,6 +50,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	char	*all;
 	size_t	i;
 	size_t	j;
+
 	i = -1;
 	j = 0;
 	if (!s1 && !s2)

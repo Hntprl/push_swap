@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 22:28:50 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/23 00:26:55 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/23 20:19:24 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_list	*ft_highnum(t_list *list)
 {
-	t_list *tmp;
-	t_list *max;
+	t_list	*tmp;
+	t_list	*max;
 
 	tmp = list;
 	max = tmp;
@@ -30,8 +30,8 @@ t_list	*ft_highnum(t_list *list)
 
 t_list	*ft_minnum(t_list *list)
 {
-	t_list *tmp;
-	t_list *min;
+	t_list	*tmp;
+	t_list	*min;
 
 	tmp = list;
 	min = tmp;
@@ -52,9 +52,46 @@ int	ft_posmid(t_list *list_b)
 	while (list_b)
 	{
 		if (list_b == ft_highnum(list_b))
-			return(i);
+			return (i);
 		list_b = list_b->next;
 		i++;
 	}
 	return (i);
+}
+
+int	ft_index_count(t_list *val, int min)
+{
+	int	index;
+
+	index = 0;
+	while (val)
+	{
+		if (val->content < min)
+			index++;
+		val = val->next;
+	}
+	return (index);
+}
+
+void	ft_index(t_list *list)
+{
+	t_list	*val;
+	t_list	*tmp;
+	int		min;
+
+	tmp = list;
+	while (tmp)
+	{
+		min = INT_MAX;
+		val = list;
+		while (val)
+		{
+			if (val->content >= tmp->content && val->content < min)
+				min = val->content;
+			val = val->next;
+		}
+		val = list;
+		tmp -> index = ft_index_count(val, min);
+		tmp = tmp -> next;
+	}
 }

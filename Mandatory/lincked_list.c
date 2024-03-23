@@ -6,13 +6,13 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 05:10:40 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/21 20:52:21 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/23 20:15:59 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_lstnew(int  content)
+t_list	*ft_lstnew(int content)
 {
 	t_list	*node;
 
@@ -47,7 +47,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	}
 	else
 		p -> next = new;
-        new -> next = NULL;
+	new -> next = NULL;
 }
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
@@ -63,9 +63,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	}
 }
 
-void del(void *lst)
+void	del(void *lst)
 {
-    free(lst);
+	free (lst);
 }
-
-
