@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 17:15:37 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/24 00:30:19 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/24 21:01:50 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	ft_check_ovf(char **num, char *str);
 void	ft_fill_list(int *numbers, int size);
 t_list	*ft_highnum(t_list *list);
 int		ft_posmid(t_list *list_b);
+int		ft_check_space(char *s1, char *s2);
 
 //Sorting.
 void	ft_three(t_list **list, char stack);

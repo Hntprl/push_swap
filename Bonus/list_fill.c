@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 19:50:31 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/22 19:54:13 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/24 06:04:14 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,12 @@ void	ft_fill_list(int *numbers, int size)
 	while (i < size - 1)
 		ft_lstadd_back(&list_a, ft_lstnew(numbers[i ++]));
 	free(numbers);
+	ft_readmoves(&list_a);
+}
+
+void	(t_list *list_a)
+{
+	char **moves;
+
+	moves = ft_readmoves();
 }

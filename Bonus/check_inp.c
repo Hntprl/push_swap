@@ -6,13 +6,13 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 05:10:57 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/22 19:54:07 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/24 02:57:06 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-void ft_check_chr(int ac, char **av)
+void	ft_check_chr(int ac, char **av)
 {
 	int		i;
 	char	*str;
@@ -20,13 +20,13 @@ void ft_check_chr(int ac, char **av)
 	char	**num;
 
 	i = 1;
-	str  = NULL;
+	str = NULL;
 	while (i < ac)
 	{
 		tmp = str;
 		str = ft_strjoin(tmp, av[i ++]);
 		if (str == NULL)
-			(free(tmp),exit(1));
+			(free(tmp), exit(1));
 		free(tmp);
 	}
 	num = ft_split(str, ' ');
@@ -36,13 +36,15 @@ void ft_check_chr(int ac, char **av)
 
 int	ft_check_def(char *num)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (num[i])
 	{
 		if (num[i] == '-' || num[i] == '+')
 			i ++;
 		if (num[i] < '0' || num[i] > '9')
-			return(1);
+			return (1);
 		i ++;
 	}
 	return (0);
@@ -51,7 +53,7 @@ int	ft_check_def(char *num)
 int	*ft_numbers(char **num, int size)
 {
 	int	i;
-	int *numbers;
+	int	*numbers;
 
 	i = 0;
 	numbers = malloc(sizeof(int) * (size - 1));
@@ -60,7 +62,7 @@ int	*ft_numbers(char **num, int size)
 	while (num[i])
 	{
 		if (ft_check_def(num[i]) == 1)
-			(free(numbers), free_strings(num), write(2,"Error\n",6),exit(1));
+			(free(numbers), free_strings(num), write(2, "Error\n", 6), exit(1));
 		numbers[i] = (int)ft_atoi(num[i]);
 		i ++;
 	}
@@ -68,23 +70,25 @@ int	*ft_numbers(char **num, int size)
 	return (numbers);
 }
 
-void ft_check_dbl(int ac, char **av, char *str, char **num)
+void	ft_check_dbl(int ac, char **av, char *str, char **num)
 {
-	int i = 0;
-	int j = 0;
+	int	i;
+	int	j;
 	int	size;
 	int	*numbers;
 
+	i = 0;
+	j = 0;
 	size = count_words(str, ' ');
 	free(str);
 	numbers = ft_numbers(num, size);
-	while(i < (size - 1))
+	while (i < (size - 1))
 	{
-	   j = i + 1;
-		while(j < (size - 1))
+		j = i + 1;
+		while (j < (size - 1))
 		{
 			if (numbers[j] == numbers[i])
-				(free(numbers),write(2, "Error!\n", 7), exit(1));
+				(free(numbers), write(2, "Error!\n", 7), exit(1));
 			j ++;
 		}
 		i ++;
@@ -94,7 +98,7 @@ void ft_check_dbl(int ac, char **av, char *str, char **num)
 
 void	ft_check_ovf(char **num, char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (num[i])
