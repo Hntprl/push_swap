@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 17:47:23 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/24 21:10:43 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/24 21:18:03 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,37 +66,12 @@ char	*ft_strjoin(char *s1, char *s2)
 		return (NULL);
 	while (s1[++i])
 		all[j++] = s1[i];
-	all[j] = ' ';
-	j++;
+	all[j ++] = ' ';
 	i = -1;
 	while (s2[++i])
 		all[j++] = s2[i];
 	all[j] = 0;
 	return (all);
-}
-
-int	ft_check_space(char *s1, char *s2)
-{
-	int s;
-
-	s = 0;
-	if (s1[0] == ' ' || s2[0] == ' ')
-		return (1);
-	while (s2[s])
-	{
-		if (s2[s] == ' ' && s2[s + 1] == ' ')
-			return (1);
-		if (s2[s] == ' ' && s2[s + 1] == '\0')
-			return (1);
-		s++;
-	}
-	while (s1[s])
-	{
-		if (s1[s] == ' ' && s1[s + 1] == ' ')
-			return (1);
-		s++;
-	}
-	return (0);
 }
 
 char	*ft_strrchr(const char *s, int c)
