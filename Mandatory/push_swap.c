@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 17:15:33 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/24 22:32:16 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/24 22:33:58 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_sorting_func(t_list *list_a)
 
 	list_b = NULL;
 	if (ft_lstsize(list_a) == 2)
-			ft_swap(&list_a, 'a');
+		ft_swap(&list_a, 'a');
 	if (ft_lstsize(list_a) == 3)
 		ft_three(&list_a, 'a');
 	if (ft_lstsize(list_a) == 4)
@@ -109,6 +109,5 @@ int	main(int ac, char **av)
 	{
 		ft_check_chr(ac, av);
 	}
-	
 	return (0);
 }
