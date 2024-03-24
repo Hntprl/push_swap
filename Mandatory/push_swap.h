@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 17:15:37 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/23 20:37:44 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/24 00:30:19 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,15 @@ t_list	*ft_highnum(t_list *list);
 int		ft_posmid(t_list *list_b);
 
 //Sorting.
-void	ft_three(t_list *list, char stack);
-void	ft_four(t_list *list_a);
-void	ft_five(t_list *list_a);
+void	ft_three(t_list **list, char stack);
+void	ft_four(t_list **list_a);
+void	ft_five(t_list **list_a);
 t_list	*ft_minnum(t_list *list);
 void	ft_sorted_numbers(t_list *list_a);
 int		ft_index_count(t_list *val, int min);
 void	ft_index(t_list *list);
-void	ft_two_hundred(t_list *list_a, t_list *list_b, int dev);
-void	ft_last_sort(t_list *list_b, t_list *list_a);
+void	ft_two_hundred(t_list **list_a, t_list *list_b, int dev);
+void	ft_last_sort(t_list *list_b, t_list **list_a);
 void	ft_sorting_func(t_list *list_a);
 
 //List.
