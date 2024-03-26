@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 05:10:57 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/24 02:57:06 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/25 23:15:37 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_check_chr(int ac, char **av)
 	}
 	num = ft_split(str, ' ');
 	ft_check_ovf(num, str);
-	ft_check_dbl(ac, av, str, num);
+	ft_check_dbl(str, num);
 }
 
 int	ft_check_def(char *num)
@@ -70,7 +70,7 @@ int	*ft_numbers(char **num, int size)
 	return (numbers);
 }
 
-void	ft_check_dbl(int ac, char **av, char *str, char **num)
+void	ft_check_dbl(char *str, char **num)
 {
 	int	i;
 	int	j;

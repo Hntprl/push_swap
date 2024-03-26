@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 05:35:46 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/24 05:33:00 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/25 23:25:19 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,18 @@ char	**ft_split(char const *s, char c);
 int		count_words(char const *str, char c);
 void	free_strings(char **strings);
 long	ft_atoi(char *str);
+int		ft_check_space(char *s1, char *s2);
 
 //check_inp
 void	ft_check_chr(int ac, char **av);
 int		ft_check_def(char *num);
 int		*ft_numbers(char **num, int size);
-void	ft_check_dbl(int ac, char **av, char *str, char **num);
+void	ft_check_dbl(char *str, char **num);
 void	ft_check_ovf(char **num, char *str);
 void	ft_fill_list(int *numbers, int size);
+void    ft_readmoves(t_list	*list_a);
+void	ft_sorted_numbers(t_list *list_a);
+void	ft_sort_list(char *moves, t_list **list_a);
 
 //List
 t_list	*ft_lstnew(int content);
@@ -56,4 +60,12 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	del(void *lst);
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 int		ft_lstsize(t_list *lst);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);;
+
+//Opirations
+void	ft_swap(t_list **list);
+void	ft_push(t_list **list, t_list **list2);
+void	ft_rotate(t_list **list);
+void	ft_reverse_rotate(t_list **list);
+void	ft_rotate_rotate(t_list	**list_a, t_list **list_b);
 #endif
