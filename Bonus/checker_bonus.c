@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 05:33:48 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/25 23:26:05 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/26 02:05:16 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ void    ft_readmoves(t_list	*list_a)
 	str = get_next_line(0);
 	while (str)
 	{
+		printf("%s", str);
 		ft_sort_list(str, &list_a);
-		free(str);
-		str = get_next_line(0);	
+		free(str);	
+		str = get_next_line(0);
 	}
-	printf("%d\n", list_a->content);
 	ft_sorted_numbers(list_a);
 }
 
@@ -51,12 +51,10 @@ void	ft_sort_list(char *moves, t_list **list_a)
 {
 	t_list	*list_b;
 	int	i;
-
 	i = 0;
 	list_b = NULL;
 		if (ft_strnstr(moves, "sa", 2))
 			ft_swap(list_a);
-		
 		else if (ft_strnstr(moves, "sb", 2))
 			ft_swap(&list_b);
 		else if (ft_strnstr(moves, "pa", 2))

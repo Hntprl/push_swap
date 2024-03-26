@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 17:47:23 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/24 23:43:49 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/26 02:39:05 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ size_t	ft_strlen(const char *str)
 long	ft_atoi(char *str)
 {
 	long long	sign;
-	long	i;
+	long		i;
 	long long	sum;
 
 	i = 0;

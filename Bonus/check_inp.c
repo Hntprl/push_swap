@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 05:10:57 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/25 23:15:37 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/26 01:59:22 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_check_chr(int ac, char **av)
 	while (i < ac)
 	{
 		tmp = str;
-		str = ft_strjoin(tmp, av[i ++]);
+		str = ft_strjoin_chr(tmp, av[i ++]);
 		if (str == NULL)
 			(free(tmp), exit(1));
 		free(tmp);

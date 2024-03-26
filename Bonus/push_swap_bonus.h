@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 05:35:46 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/25 23:25:19 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/26 02:03:10 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ char	**ft_split(char const *s, char c);
 int		count_words(char const *str, char c);
 void	free_strings(char **strings);
 long	ft_atoi(char *str);
+char	*ft_strjoin_chr(char *s1, char *s2);
 int		ft_check_space(char *s1, char *s2);
 
 //check_inp

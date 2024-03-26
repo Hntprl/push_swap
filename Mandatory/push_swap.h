@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 17:15:37 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/25 21:11:15 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/26 02:11:02 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		count_words(char const *str, char c);
 void	free_strings(char **strings);
 
 //Check_input.
-void	ft_check_dbl(int ac, char **av, char *str, char **num);
+void	ft_check_dbl(char *str, char **num);
 void	ft_check_chr(int ac, char **av);
 void	ft_check_ovf(char **num, char *str);
 void	ft_fill_list(int *numbers, int size);
