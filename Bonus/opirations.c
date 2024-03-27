@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 05:11:10 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/25 21:16:02 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/27 02:42:17 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_rotate(t_list **list)
 	(*list) = tmp;
 }
 
-void	ft_reverse_rotate(t_list **list)
+void	ft_r_rotate(t_list **list)
 {
 	t_list	*tmp;
 	t_list	*tmp2;

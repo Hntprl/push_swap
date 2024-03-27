@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 17:15:33 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/26 02:38:41 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/27 02:34:42 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	ft_last_sort(t_list *list_b, t_list **list_a)
 				ft_swap(list_a, 'a');
 		}
 		mid = ft_lstsize(list_b) / 2;
-		if (ft_posmid(list_b) <= mid)
+		if (ft_posmid(list_b) < mid)
 			ft_rotate(&list_b, 'b');
 		else
 			ft_reverse_rotate(&list_b, 'b');
@@ -105,14 +105,7 @@ void	ft_last_sort(t_list *list_b, t_list **list_a)
 
 int	main(int ac, char **av)
 {
-	if (ac > 2)
+	if (ac > 1)
 		ft_check_chr(ac, av);
-	else
-	{
-		if (av[1][0] < '0' || av[1][0] > '9')
-			(write(2, "Error\n", 6), exit(1));
-		if (ft_atoi(av[1]) > 2147483647 || ft_atoi(av[1]) < -2147483648)
-			(write(2, "Error!\n", 7), exit(1));
-	}
 	return (0);
 }

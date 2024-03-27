@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 18:43:58 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/22 19:43:09 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/26 04:06:54 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,3 @@ char	*get_next_line(int fd)
 		return (free(backup), free(line), backup = NULL);
 	return (line);
 }
-// int main ()
-// {
-// 	int fd = open("test.txt", O_RDONLY);
-// 	char *p = get_next_line(fd);
-// 	printf("%s", p);
-// }

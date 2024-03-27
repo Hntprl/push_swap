@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 05:10:57 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/26 02:11:31 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/27 02:54:08 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,15 @@ void	ft_check_chr(int ac, char **av)
 	while (i < ac)
 	{
 		tmp = str;
-		str = ft_strjoin(tmp, av[i ++]);
+		str = ft_strjoin(tmp, av[i]);
 		if (str == NULL)
 			(free(tmp), write(2, "Error\n", 6), exit(1));
 		free(tmp);
+		i ++;
 	}
 	num = ft_split(str, ' ');
+	if (!num[0])
+		(free_strings(num), free(str), write(2, "Error\n", 6), exit(1));
 	ft_check_ovf(num, str);
 	ft_check_dbl(str, num);
 }
@@ -90,7 +93,7 @@ void	ft_check_dbl(char *str, char **num)
 		while (j < (size - 1))
 		{
 			if (numbers[j] == numbers[i])
-				(free(numbers), write(2, "Error!\n", 7), exit(1));
+				(free(numbers), write(2, "Error\n", 6), exit(1));
 			j ++;
 		}
 		i ++;
@@ -106,7 +109,7 @@ void	ft_check_ovf(char **num, char *str)
 	while (num[i])
 	{
 		if (ft_atoi(num[i]) > 2147483647 || ft_atoi(num[i]) < -2147483648)
-			(free(str), free_strings(num), write(2, "Error!\n", 7), exit(1));
+			(free(str), free_strings(num), write(2, "Error\n", 6), exit(1));
 		i ++;
 	}
 }
