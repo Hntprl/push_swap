@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 05:33:48 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/28 20:31:26 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/28 20:55:29 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,27 +57,27 @@ void	ft_readmoves(t_list	*list_a)
 void	ft_sort_list(char *moves, t_list **list_a, t_list **list_b)
 {
 	if (ft_strnstr(moves, "sa", 2) && moves[2] == '\n')
-		(write(1, "sa\n", 3), ft_swap(list_a));
+		ft_swap(list_a);
 	else if (ft_strnstr(moves, "sb", 2) && moves[2] == '\n')
-		(write(1, "sb\n", 3), ft_swap(list_b));
+		ft_swap(list_b);
 	else if (ft_strnstr(moves, "pa", 2) && moves[2] == '\n')
-		(write(1, "pa\n", 3), ft_push(list_b, list_a));
+		ft_push(list_b, list_a);
 	else if (ft_strnstr(moves, "pb", 2) && moves[2] == '\n')
-		(write(1, "pb\n", 3), ft_push(list_a, list_b));
+		ft_push(list_a, list_b);
 	else if (ft_strnstr(moves, "ra", 2) && moves[2] == '\n')
-		(write(1, "ra\n", 3), ft_rotate(list_a));
+		ft_rotate(list_a);
 	else if (ft_strnstr(moves, "rb", 2) && moves[2] == '\n')
-		(write(1, "rb\n", 3), ft_rotate(list_b));
+		ft_rotate(list_b);
 	else if (ft_strnstr(moves, "rra", 3) && moves[3] == '\n')
-		(write(1, "rra\n", 4), ft_r_rotate(list_a));
+		ft_r_rotate(list_a);
 	else if (ft_strnstr(moves, "rrb", 3) && moves[3] == '\n')
-		(write(1, "rrb\n", 4), ft_r_rotate(list_b));
+		ft_r_rotate(list_b);
 	else if (ft_strnstr(moves, "rr", 2) && moves[2] == '\n')
-		(write(1, "rr\n", 3), ft_rotate_rotate(list_a, list_b));
+		ft_rotate_rotate(list_a, list_b);
 	else if (ft_strnstr(moves, "ss", 2) && moves[2] == '\n')
-		(write(1, "ss\n", 3), ft_swap(list_b), ft_swap(list_a));
+		(ft_swap(list_b), ft_swap(list_a));
 	else if (ft_strnstr(moves, "rrr", 3) && moves[3] == '\n')
-		((write(1, "rrr\n", 4), ft_r_rotate(list_b), ft_r_rotate(list_a)));
+		(ft_r_rotate(list_b), ft_r_rotate(list_a));
 	else
 		ft_sort_list_v(moves, list_a, list_a);
 }
