@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 05:35:46 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/27 02:47:08 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/28 20:25:29 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	ft_fill_list(int *numbers, int size);
 void	ft_readmoves(t_list	*list_a);
 void	ft_sorted_numbers(t_list *list_a);
 void	ft_sort_list(char *moves, t_list **list_a, t_list **list_b);
+void	ft_sort_list_v(char *moves, t_list **list_a, t_list **list_b);
 
 //List
 t_list	*ft_lstnew(int content);

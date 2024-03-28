@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 05:10:57 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/27 02:54:32 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/27 22:46:58 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	ft_check_dbl(char *str, char **num)
 		while (j < (size - 1))
 		{
 			if (numbers[j] == numbers[i])
-				(free(numbers), write(2, "Error!\n", 7), exit(1));
+				(free(numbers), write(2, "Error\n", 6), exit(1));
 			j ++;
 		}
 		i ++;
@@ -106,7 +106,7 @@ void	ft_check_ovf(char **num, char *str)
 	while (num[i])
 	{
 		if (ft_atoi(num[i]) > 2147483647 || ft_atoi(num[i]) < -2147483648)
-			(free(str), free_strings(num), write(2, "Error!\n", 7), exit(1));
+			(free(str), free_strings(num), write(2, "Error\n", 6), exit(1));
 		i ++;
 	}
 }
