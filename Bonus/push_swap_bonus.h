@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 05:35:46 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/28 20:25:29 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/29 05:06:53 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,11 @@ void	free_strings(char **strings);
 long	ft_atoi(char *str);
 char	*ft_strjoin_chr(char *s1, char *s2);
 int		ft_check_space(char *s1, char *s2);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 //check_inp
-void	ft_check_chr(int ac, char **av);
-int		ft_check_def(char *num);
+void	ft_make_str(int ac, char **av);
+int		ft_check_char(char *num);
 int		*ft_numbers(char **num, int size);
 void	ft_check_dbl(char *str, char **num);
 void	ft_check_ovf(char **num, char *str);
@@ -62,7 +63,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	del(void *lst);
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 int		ft_lstsize(t_list *lst);
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 //Opirations
 void	ft_swap(t_list **list);

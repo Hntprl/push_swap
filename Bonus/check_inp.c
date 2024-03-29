@@ -6,13 +6,13 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 05:10:57 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/27 22:46:58 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/29 05:10:07 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-void	ft_check_chr(int ac, char **av)
+void	ft_make_str(int ac, char **av)
 {
 	int		i;
 	char	*str;
@@ -31,12 +31,12 @@ void	ft_check_chr(int ac, char **av)
 	}
 	num = ft_split(str, ' ');
 	if (!num[0])
-		(write(2, "Error\n", 6), exit(1));
+		(free_strings(num), free(str), write(2, "Error\n", 6), exit(1));
 	ft_check_ovf(num, str);
 	ft_check_dbl(str, num);
 }
 
-int	ft_check_def(char *num)
+int	ft_check_char(char *num)
 {
 	int	i;
 
@@ -63,7 +63,7 @@ int	*ft_numbers(char **num, int size)
 		exit(1);
 	while (num[i])
 	{
-		if (ft_check_def(num[i]) == 1)
+		if (ft_check_char(num[i]) == 1)
 			(free(numbers), free_strings(num), write(2, "Error\n", 6), exit(1));
 		numbers[i] = (int)ft_atoi(num[i]);
 		i ++;

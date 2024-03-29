@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 17:15:33 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/29 02:36:21 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/29 05:01:18 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,6 @@ void	ft_last_sort(t_list *list_b, t_list **list_a)
 int	main(int ac, char **av)
 {
 	if (ac > 1)
-		ft_check_chr(ac, av);
+		ft_make_str(ac, av);
 	return (0);
 }
