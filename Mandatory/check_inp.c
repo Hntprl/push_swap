@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 05:10:57 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/27 02:54:08 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/29 01:36:03 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	*ft_numbers(char **num, int size)
 	i = 0;
 	numbers = malloc(sizeof(int) * (size - 1));
 	if (numbers == NULL)
-		exit(1);
+		(write(2, "Error\n", 6), exit(1));
 	while (num[i])
 	{
 		if (ft_check_def(num[i]) == 1)

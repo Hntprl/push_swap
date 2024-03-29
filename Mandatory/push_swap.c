@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 17:15:33 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/27 02:34:42 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/29 02:36:21 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_fill_list(int *numbers, int size)
 
 	list_a = malloc(sizeof(t_list));
 	if (list_a == NULL)
-		exit(1);
+		(write(2, "Error\n", 6), exit(1));
 	list_a->content = numbers[0];
 	list_a->next = NULL;
 	i = 1;

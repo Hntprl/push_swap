@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 22:28:50 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/23 20:19:24 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/29 02:27:10 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,21 +77,21 @@ void	ft_index(t_list *list)
 {
 	t_list	*val;
 	t_list	*tmp;
-	int		min;
+	int		max;
 
 	tmp = list;
 	while (tmp)
 	{
-		min = INT_MAX;
+		max = INT_MAX;
 		val = list;
 		while (val)
 		{
-			if (val->content >= tmp->content && val->content < min)
-				min = val->content;
+			if (val->content >= tmp->content && val->content < max)
+				max = val->content;
 			val = val->next;
 		}
 		val = list;
-		tmp -> index = ft_index_count(val, min);
+		tmp -> index = ft_index_count(val, max);
 		tmp = tmp -> next;
 	}
 }
