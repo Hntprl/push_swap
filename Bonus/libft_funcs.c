@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 17:47:23 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/27 22:52:46 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/04/03 02:52:54 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,26 +50,20 @@ int	ft_check_space(char *s1, char *s2)
 	int	s;
 
 	s = 0;
-	if (s1[0] == ' ' || s2[0] == ' ')
+	if (s1[0] == '\0' || s2[0] == '\0')
 		return (1);
-	while (s2[s])
+	while (s2[s] == ' ')
 	{
-		if (s2[s] == ' ' && s2[s + 1] == ' ')
+		if (s2[s + 1] == '\0')
 			return (1);
-		if (s2[s] == ' ' && s2[s + 1] == '\0')
-			return (1);
-		if (!s2[s])
-			return (1);
-		s++;
+		s ++;
 	}
 	s = 0;
-	while (s1[s])
+	while (s1[s] == ' ')
 	{
-		if (s1[s] == ' ' && s1[s + 1] == ' ')
+		if (s1[s + 1] == '\0')
 			return (1);
-		if (!s1[s])
-			return (1);
-		s++;
+		s ++;
 	}
 	return (0);
 }
