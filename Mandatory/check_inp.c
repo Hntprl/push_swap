@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 05:10:57 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/29 05:02:43 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/03/31 07:17:09 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,15 @@ void	ft_make_str(int ac, char **av)
 int	ft_check_char(char *num)
 {
 	int	i;
+	int	j;
 
 	i = 0;
+	j = 0;
 	while (num[i])
 	{
+		if ((num[i] > '0' || num[i] < '9')
+			&& (num[i + 1] == '+' || (num[i + 1] == '-')))
+			return (1);
 		if (num[i] == '-' || num[i] == '+')
 			i ++;
 		if (num[i] < '0' || num[i] > '9')

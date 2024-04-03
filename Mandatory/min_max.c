@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 22:28:50 by amarouf           #+#    #+#             */
-/*   Updated: 2024/03/29 02:27:10 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/04/03 00:29:31 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,14 @@ int	ft_posmid(t_list *list_b)
 	return (i);
 }
 
-int	ft_index_count(t_list *val, int min)
+int	ft_index_count(t_list *val, int max)
 {
 	int	index;
 
 	index = 0;
 	while (val)
 	{
-		if (val->content < min)
+		if (val->content < max)
 			index++;
 		val = val->next;
 	}
@@ -90,8 +90,7 @@ void	ft_index(t_list *list)
 				max = val->content;
 			val = val->next;
 		}
-		val = list;
-		tmp -> index = ft_index_count(val, max);
+		tmp -> index = ft_index_count(list, max);
 		tmp = tmp -> next;
 	}
 }
